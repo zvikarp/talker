@@ -11,9 +11,13 @@ dependencies:
     sdk: flutter
   dio: ^5.0.0
   talker_dio_logger:
-    path: ../../talker_dio_logger
+    git:
+      url: https://github.com/zvikarp/talker.git
+      path: packages/talker_dio_logger/
   talker_flutter:
-    path: ../../talker_flutter
+    git:
+      url: https://github.com/zvikarp/talker.git
+      path: packages/talker_flutter/
 
 dev_dependencies:
   flutter_test:

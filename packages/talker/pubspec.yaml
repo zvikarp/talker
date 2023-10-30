@@ -18,8 +18,9 @@ environment:
 
 dependencies:
   talker_logger:
-    path:
-      ../talker_logger
+    git:
+      url: https://github.com/zvikarp/talker.git
+      path: packages/talker_logger/
 
 dev_dependencies:
   dart_code_metrics: ^5.7.4
