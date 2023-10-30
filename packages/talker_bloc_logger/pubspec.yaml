@@ -18,8 +18,9 @@ environment:
 
 dependencies:
   talker:
-    path:
-      ../talker
+    git:
+      url: https://github.com/zvikarp/talker.git
+      path: packages/talker/
   bloc: ^8.1.1
   meta: ^1.8.0
 
