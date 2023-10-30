@@ -35,16 +35,16 @@ void main() {
           "title": "Sample Konfabulator Widget",
           "name": "main_window",
           "width": 500,
-          "height": 500
+          "height": 500,
         },
         "image": {
           "src": "Images/Sun.png",
           "name": "sun1",
           "hOffset": 250,
           "vOffset": 250,
-          "alignment": "center"
+          "alignment": "center",
         },
-      }
+      },
     },
   );
   logger.log(prettyData, pen: AnsiPen()..xterm(46));

@@ -1,5 +1,4 @@
 import 'package:mason/mason.dart';
-import 'package:talker/talker.dart';
 
 void run(HookContext context) {
   context.vars['lang'] = 'dart';

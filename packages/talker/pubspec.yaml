@@ -4,6 +4,7 @@ version: 3.1.4
 homepage: https://github.com/Frezyx/talker
 repository: https://github.com/Frezyx/talker
 issue_tracker: https://github.com/Frezyx/talker/issues
+publish_to: none
 
 topics:
   - logger
@@ -16,7 +17,9 @@ environment:
   sdk: '>=2.15.0 <4.0.0'
 
 dependencies:
-  talker_logger: ^3.1.0
+  talker_logger:
+    path:
+      ../talker_logger
 
 dev_dependencies:
   dart_code_metrics: ^5.7.4

@@ -3,7 +3,6 @@ import 'package:flutter/services.dart';
 import 'package:group_button/group_button.dart';
 import 'package:talker_flutter/src/controller/controller.dart';
 import 'package:talker_flutter/src/ui/talker_monitor/talker_monitor.dart';
-import 'package:talker_flutter/src/ui/talker_settings/talker_settings.dart';
 import 'package:talker_flutter/src/ui/widgets/talker_view_appbar.dart';
 import 'package:talker_flutter/talker_flutter.dart';
 
@@ -19,6 +18,7 @@ class TalkerView extends StatefulWidget {
     this.appBarTitle,
     this.itemsBuilder,
     this.appBarLeading,
+    required this.customSettings,
   }) : super(key: key);
 
   /// Talker implementation
@@ -40,6 +40,8 @@ class TalkerView extends StatefulWidget {
   final TalkerViewController? controller;
 
   final ScrollController? scrollController;
+
+  final ValueNotifier<List<CustomSettingsGroup>>? customSettings;
 
   @override
   State<TalkerView> createState() => _TalkerViewState();
@@ -132,10 +134,15 @@ class _TalkerViewState extends State<TalkerView> {
       backgroundColor: Colors.transparent,
       isScrollControlled: true,
       builder: (context) {
-        return TalkerSettingsBottomSheet(
-          talkerScreenTheme: theme,
-          talker: talker,
-        );
+        return ValueListenableBuilder<List<CustomSettingsGroup>>(
+            valueListenable: widget.customSettings ?? ValueNotifier([]),
+            builder: (context, customSettings, child) {
+              return TalkerSettingsBottomSheet(
+                talkerScreenTheme: theme,
+                talker: talker,
+                customSettings: customSettings,
+              );
+            });
       },
     );
   }

@@ -10,6 +10,7 @@ class TalkerSettingsBottomSheet extends StatefulWidget {
     Key? key,
     required this.talkerScreenTheme,
     required this.talker,
+    required this.customSettings,
   }) : super(key: key);
 
   /// Theme for customize [TalkerScreen]
@@ -17,6 +18,8 @@ class TalkerSettingsBottomSheet extends StatefulWidget {
 
   /// Talker implementation
   final ValueNotifier<Talker> talker;
+
+  final List<CustomSettingsGroup> customSettings;
 
   @override
   State<TalkerSettingsBottomSheet> createState() =>
@@ -82,6 +85,40 @@ class _TalkerSettingsBottomSheetState extends State<TalkerSettingsBottomSheet> {
           widget.talker.notifyListeners();
         },
       ),
+      ...widget.customSettings.map((CustomSettingsGroup group) {
+        return Column(
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+              child: Text(
+                group.name,
+                style: theme.textTheme.titleLarge?.copyWith(
+                  color: widget.talkerScreenTheme.textColor,
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
+            ),
+            TalkerSettingsCard(
+              talkerScreenTheme: widget.talkerScreenTheme,
+              title: 'Enabled',
+              enabled: group.isEnabled,
+              onChanged: group.onChangedIsEnabled,
+            ),
+            ...group.items.map(
+              (CustomSettingsItem item) => TalkerSettingsCard(
+                canEdit: group.isEnabled,
+                talkerScreenTheme: widget.talkerScreenTheme,
+                title: item.name,
+                trailing: item.widgetBuilder(
+                  context,
+                  item.value,
+                  group.isEnabled,
+                ),
+              ),
+            ),
+          ],
+        );
+      }),
       // Padding(
       //   padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
       //   child: Text(
