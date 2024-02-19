@@ -10,3 +10,4 @@ export 'ui/theme/theme.dart';
 export 'ui/widgets/data_card.dart';
 export 'ui/widgets/snackbar.dart';
 export 'utils/run_talker_zoned_guarded/run_talker_zoned_guarded.dart';
+export 'ui/talker_settings/talker_settings.dart';

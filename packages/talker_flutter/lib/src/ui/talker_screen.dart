@@ -3,14 +3,15 @@ import 'package:talker_flutter/talker_flutter.dart';
 
 /// UI view for output of all Talker logs and errors
 class TalkerScreen extends StatelessWidget {
-  const TalkerScreen({
-    Key? key,
-    required this.talker,
-    this.appBarTitle = 'Talker',
-    this.theme = const TalkerScreenTheme(),
-    this.itemsBuilder,
-    this.appBarLeading,
-  }) : super(key: key);
+  const TalkerScreen(
+      {Key? key,
+      required this.talker,
+      this.appBarTitle = 'Talker',
+      this.theme = const TalkerScreenTheme(),
+      this.itemsBuilder,
+      this.appBarLeading,
+      this.customSettings})
+      : super(key: key);
 
   /// Talker implementation
   final Talker talker;
@@ -28,6 +29,8 @@ class TalkerScreen extends StatelessWidget {
   /// log items cards in list
   final TalkerDataBuilder? itemsBuilder;
 
+  final ValueNotifier<List<CustomSettingsGroup>>? customSettings;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,6 +40,7 @@ class TalkerScreen extends StatelessWidget {
         theme: theme,
         appBarTitle: appBarTitle,
         appBarLeading: appBarLeading,
+        customSettings: customSettings,
       ),
     );
   }

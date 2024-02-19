@@ -25,7 +25,7 @@ class BaseBottomSheet extends StatelessWidget {
         ),
         padding: EdgeInsets.only(
           top: 20,
-          bottom: mq.padding.bottom,
+          bottom: mq.padding.bottom + MediaQuery.of(context).viewInsets.bottom,
         ),
         decoration: BoxDecoration(
           color: talkerScreenTheme.backgroundColor,
