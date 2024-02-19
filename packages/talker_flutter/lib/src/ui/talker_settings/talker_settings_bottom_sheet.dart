@@ -9,12 +9,16 @@ class TalkerSettingsBottomSheet extends StatefulWidget {
   const TalkerSettingsBottomSheet({
     Key? key,
     required this.talkerScreenTheme,
+    required this.settingsSheetTitle,
     required this.talker,
     required this.customSettings,
   }) : super(key: key);
 
   /// Theme for customize [TalkerScreen]
   final TalkerScreenTheme talkerScreenTheme;
+
+  /// Title for the settings bottom sheet
+  final String settingsSheetTitle;
 
   /// Talker implementation
   final ValueNotifier<Talker> talker;
@@ -182,7 +186,7 @@ class _TalkerSettingsBottomSheetState extends State<TalkerSettingsBottomSheet> {
     ];
 
     return BaseBottomSheet(
-      title: 'Talker Settings',
+      title: widget.settingsSheetTitle,
       talkerScreenTheme: widget.talkerScreenTheme,
       child: Expanded(
         child: CustomScrollView(

@@ -16,6 +16,7 @@ class TalkerView extends StatefulWidget {
     this.scrollController,
     this.theme = const TalkerScreenTheme(),
     this.appBarTitle,
+    required this.settingsSheetTitle,
     this.itemsBuilder,
     this.appBarLeading,
     required this.customSettings,
@@ -29,6 +30,9 @@ class TalkerView extends StatefulWidget {
 
   /// Screen [AppBar] title
   final String? appBarTitle;
+
+  // Settings screen title
+  final String settingsSheetTitle;
 
   /// Screen [AppBar] leading
   final Widget? appBarLeading;
@@ -144,6 +148,7 @@ class _TalkerViewState extends State<TalkerView> {
             builder: (context, customSettings, child) {
               return TalkerSettingsBottomSheet(
                 talkerScreenTheme: theme,
+                settingsSheetTitle: widget.settingsSheetTitle,
                 talker: talker,
                 customSettings: customSettings,
               );

@@ -7,6 +7,7 @@ class TalkerScreen extends StatelessWidget {
       {Key? key,
       required this.talker,
       this.appBarTitle = 'Talker',
+      this.settingsSheetTitle = 'Talker settings',
       this.theme = const TalkerScreenTheme(),
       this.itemsBuilder,
       this.appBarLeading,
@@ -21,6 +22,9 @@ class TalkerScreen extends StatelessWidget {
 
   /// Screen [AppBar] title
   final String appBarTitle;
+
+  /// Settings screen title
+  final String settingsSheetTitle;
 
   /// Screen [AppBar] leading
   final Widget? appBarLeading;
@@ -39,6 +43,7 @@ class TalkerScreen extends StatelessWidget {
         talker: talker,
         theme: theme,
         appBarTitle: appBarTitle,
+        settingsSheetTitle: settingsSheetTitle,
         appBarLeading: appBarLeading,
         customSettings: customSettings,
       ),
