@@ -91,6 +91,7 @@ class _TalkerSettingsBottomSheetState extends State<TalkerSettingsBottomSheet> {
       ),
       ...widget.customSettings.map((CustomSettingsGroup group) {
         return Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
@@ -188,6 +189,7 @@ class _TalkerSettingsBottomSheetState extends State<TalkerSettingsBottomSheet> {
     return BaseBottomSheet(
       title: widget.settingsSheetTitle,
       talkerScreenTheme: widget.talkerScreenTheme,
+      heightFactor: 0.8,
       child: Expanded(
         child: CustomScrollView(
           slivers: [
