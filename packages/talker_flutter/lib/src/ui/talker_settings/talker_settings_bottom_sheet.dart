@@ -92,21 +92,23 @@ class _TalkerSettingsBottomSheetState extends State<TalkerSettingsBottomSheet> {
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
               child: Text(
                 group.name,
+                textAlign: TextAlign.start,
                 style: theme.textTheme.titleLarge?.copyWith(
                   color: widget.talkerScreenTheme.textColor,
                   fontWeight: FontWeight.w700,
                 ),
               ),
             ),
-            TalkerSettingsCard(
-              talkerScreenTheme: widget.talkerScreenTheme,
-              title: 'Enabled',
-              enabled: group.isEnabled,
-              onChanged: group.onChangedIsEnabled,
-            ),
+            if (group.showEnabled)
+              TalkerSettingsCard(
+                talkerScreenTheme: widget.talkerScreenTheme,
+                title: 'Enabled',
+                enabled: group.isEnabled,
+                onChanged: group.onChangedIsEnabled,
+              ),
             ...group.items.map(
               (CustomSettingsItem item) => TalkerSettingsCard(
-                canEdit: group.isEnabled,
+                canEdit: group.isEnabled || !group.showEnabled,
                 talkerScreenTheme: widget.talkerScreenTheme,
                 title: item.name,
                 trailing: item.widgetBuilder(
