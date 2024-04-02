@@ -31,7 +31,7 @@ Follow these steps to use this package
 ### Add dependency
 ```yaml
 dependencies:
-  talker_bloc_logger: ^4.0.2
+  talker_bloc_logger: ^4.1.3
 ```
 
 ### Usage
@@ -45,7 +45,7 @@ Bloc.observer = TalkerBlocObserver();
 ```
 
 ## Using with Talker
-You can add your talker instance for TalkerDioLogger if your app already uses Talker.
+You can add your talker instance for TalkerBlocObserver if your app already uses Talker.
 
 In this case, all logs and errors will fall into your unified tracking system
 

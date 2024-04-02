@@ -1,3 +1,28 @@
+# 4.1.3
+- [talker_flutter] Bump share_plus version to 8.0.2
+- [talker_flutter] Bump path_provider version to 2.1.2
+
+# 4.1.2
+- [talker_flutter] Bump group_button version to 5.3.4
+
+# 4.1.1
+- Fix TalkerLog.generateTextMessage exception info missing
+
+Thanks to [heiha100](https://github.com/heiha100)
+
+# 4.1.0
+- Fix Exception and StackTrace is ignored for logs
+- Fix typo at the beginning README.md 
+- Fix TalkerScreen log type selector text colors
+
+Thanks to [qwadrox](https://github.com/qwadrox) and [Danyalo](https://github.com/Danyalo)
+
+# 4.0.3
+- Support web for talker and talker_logger
+- Update talker_bloc_logger README.md
+
+Thanks to [melodysdreamj](https://github.com/melodysdreamj) and [MiladAtef](https://github.com/MiladAtef)
+
 # 4.0.2
 - Fix inconsistent colors at TalkerScreen
 - Add **LogColors** typedef in TalkerTheme ```(Map<TalkerLogType, Color>)```

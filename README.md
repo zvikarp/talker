@@ -115,7 +115,7 @@ Follow these steps to the coolest experience in error handling
 ### Add dependency
 ```yaml
 dependencies:
-  talker: ^4.0.2
+  talker: ^4.1.3
 ```
 
 ### Easy to use
@@ -127,7 +127,7 @@ Simple and concise syntax will help you with this
 
   final talker = Talker();
 
-  /// Jsut logs
+  /// Just logs
   talker.warning('The pizza is over 😥');
   talker.debug('Thinking about order new one 🤔');
 
@@ -138,7 +138,7 @@ Simple and concise syntax will help you with this
     talker.handle(e, st);
   }
 
-  /// Jsut logs
+  /// Just logs
   talker.info('Ordering from other restaurant...');
   talker.info('Payment started...');
   talker.good('Payment completed. Waiting for pizza 🍕');
@@ -286,7 +286,7 @@ Talker Flutter is an extension for the Dart Talker package that adds extra funct
 ### Add dependency
 ```yaml
 dependencies:
-  talker_flutter: ^4.0.2
+  talker_flutter: ^4.1.3
 ```
 
 ### Setup
@@ -514,7 +514,7 @@ Follow these steps to use this package
 ### Add dependency
 ```yaml
 dependencies:
-  talker_dio_logger: ^4.0.2
+  talker_dio_logger: ^4.1.3
 ```
 
 ### Usage
@@ -610,7 +610,7 @@ Follow these steps to use this package
 ### Add dependency
 ```yaml
 dependencies:
-  talker_bloc_logger: ^4.0.2
+  talker_bloc_logger: ^4.1.3
 ```
 
 ### Usage
