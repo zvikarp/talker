@@ -7,7 +7,7 @@ class CustomSettingsItemAction extends CustomSettingsItem<void Function()> {
 
   const CustomSettingsItemAction({
     required String name,
-    required void Function() onTap,
+    required this.onTap,
     this.buttonName = 'Action',
   }) : super(name: name, value: onTap);
 
