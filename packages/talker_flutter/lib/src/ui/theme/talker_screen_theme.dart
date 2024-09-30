@@ -25,12 +25,10 @@ class TalkerScreenTheme {
   final Map<TalkerLogType, Color>? _customColors;
 
   Map<TalkerLogType, Color> get logColors {
-    if (_customColors != null) {
-      final customMap = Map<TalkerLogType, Color>.from(_defaultColors);
-      customMap.addAll(_customColors!);
-      return customMap;
-    }
-    return _defaultColors;
+    return {
+      ..._defaultColors,
+      ...?_customColors,
+    };
   }
 
   factory TalkerScreenTheme.fromTheme(ThemeData theme, [LogColors? logColors]) {

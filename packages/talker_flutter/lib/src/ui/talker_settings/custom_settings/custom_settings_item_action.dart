@@ -42,8 +42,8 @@ class ActionWidgetBuilder extends StatelessWidget {
     return Container(
       constraints: const BoxConstraints(maxWidth: 150),
       child: ElevatedButton(
-        child: Text(buttonName),
         onPressed: isEnabled ? value : null,
+        child: Text(buttonName),
       ),
     );
   }
