@@ -21,6 +21,12 @@ const _defaultTitles = {
   TalkerLogType.blocCreate: 'bloc-create',
   TalkerLogType.blocClose: 'bloc-close',
 
+  /// Riverpod section
+  TalkerLogType.riverpodAdd: 'riverpod-add',
+  TalkerLogType.riverpodUpdate: 'riverpod-update',
+  TalkerLogType.riverpodDispose: 'riverpod-dispose',
+  TalkerLogType.riverpodFail: 'riverpod-fail',
+
   /// Flutter section
   TalkerLogType.route: 'route',
 };
@@ -46,6 +52,12 @@ final _defaultColors = {
   TalkerLogType.blocCreate: AnsiPen()..xterm(35),
   TalkerLogType.blocClose: AnsiPen()..xterm(198),
 
+  /// Riverpod section
+  TalkerLogType.riverpodAdd: AnsiPen()..xterm(51),
+  TalkerLogType.riverpodUpdate: AnsiPen()..xterm(49),
+  TalkerLogType.riverpodDispose: AnsiPen()..xterm(198),
+  TalkerLogType.riverpodFail: AnsiPen()..red(),
+
   /// Flutter section
   TalkerLogType.route: AnsiPen()..xterm(135),
 };
@@ -61,9 +73,11 @@ class TalkerSettings {
     int maxHistoryItems = 1000,
     this.titles = _defaultTitles,
     Map<TalkerLogType, AnsiPen>? colors,
+    TimeFormat timeFormat = TimeFormat.timeAndSeconds,
   })  : _useHistory = useHistory,
         _useConsoleLogs = useConsoleLogs,
-        _maxHistoryItems = maxHistoryItems {
+        _maxHistoryItems = maxHistoryItems,
+        _timeFormat = timeFormat {
     if (colors != null) {
       _defaultColors.addAll(colors);
     }
@@ -79,13 +93,17 @@ class TalkerSettings {
   final bool _useHistory;
 
   /// By default talker print all Errors / Exceptions and logs in console.
-  /// If [true] - printing in history [false] - not printing.
+  /// If [true] - printing in console [false] - not printing.
   bool get useConsoleLogs => _useConsoleLogs && enabled;
   final bool _useConsoleLogs;
 
   /// Max records count in history list
   int get maxHistoryItems => _maxHistoryItems;
   final int _maxHistoryItems;
+
+  /// The time format of the logs [TimeFormat]
+  TimeFormat get timeFormat => _timeFormat;
+  final TimeFormat _timeFormat;
 
   /// Use writing talker records in file
   // bool get writeToFile => _writeToFile && enabled;
